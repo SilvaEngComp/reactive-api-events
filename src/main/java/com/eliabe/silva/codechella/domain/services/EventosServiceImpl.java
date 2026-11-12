@@ -2,11 +2,11 @@ package com.eliabe.silva.codechella.domain.services;
 
 import org.springframework.stereotype.Service;
 
-import com.eliabe.silva.codechella.Application.CadastraEventoUseCase;
-import com.eliabe.silva.codechella.Application.DeletaEventoUseCase;
-import com.eliabe.silva.codechella.Application.EventosService;
-import com.eliabe.silva.codechella.Application.ListaEventosUseCase;
-import com.eliabe.silva.codechella.Application.ObterEventoUseCase;
+import com.eliabe.silva.codechella.Application.eventos.CadastraEventoUseCase;
+import com.eliabe.silva.codechella.Application.eventos.DeletaEventoUseCase;
+import com.eliabe.silva.codechella.Application.eventos.EventosService;
+import com.eliabe.silva.codechella.Application.eventos.ListaEventosUseCase;
+import com.eliabe.silva.codechella.Application.eventos.ObterEventoUseCase;
 import com.eliabe.silva.codechella.adapters.postgres.entities.Evento;
 import com.eliabe.silva.codechella.domain.dto.EventoDTO;
 

@@ -1,4 +1,4 @@
-package com.eliabe.silva.codechella.Application;
+package com.eliabe.silva.codechella.Application.eventos;
 
 import com.eliabe.silva.codechella.adapters.postgres.entities.Evento;
 import com.eliabe.silva.codechella.domain.dto.EventoDTO;

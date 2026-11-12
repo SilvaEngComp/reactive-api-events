@@ -3,7 +3,7 @@ package com.eliabe.silva.codechella.web.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eliabe.silva.codechella.Application.EventosService;
+import com.eliabe.silva.codechella.Application.eventos.EventosService;
 import com.eliabe.silva.codechella.adapters.postgres.entities.Evento;
 import com.eliabe.silva.codechella.domain.dto.EventoDTO;
 
