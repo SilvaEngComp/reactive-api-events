@@ -1,10 +1,10 @@
-package com.eliabe.silva.codechella.domain.services.useCases;
+package com.eliabe.silva.codechella.Application.eventos.impl;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.eliabe.silva.codechella.Application.ObterEventoUseCase;
+import com.eliabe.silva.codechella.Application.eventos.ObterEventoUseCase;
 import com.eliabe.silva.codechella.adapters.postgres.EventoRepository;
 import com.eliabe.silva.codechella.domain.dto.EventoDTO;
 import com.eliabe.silva.codechella.domain.mappers.EventoMapper;

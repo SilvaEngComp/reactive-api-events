@@ -1,4 +1,4 @@
-package com.eliabe.silva.codechella.Application;
+package com.eliabe.silva.codechella.Application.eventos;
 
 import reactor.core.publisher.Mono;
 

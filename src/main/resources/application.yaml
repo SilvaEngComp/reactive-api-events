@@ -9,4 +9,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/codechella
     user: postgres
     password: postgres
-
+deepL:
+  token: "19A3WcVanNsdw4qSC"
+  host: "https://api-free.deepl.com"

@@ -1,8 +1,8 @@
-package com.eliabe.silva.codechella.domain.services.useCases;
+package com.eliabe.silva.codechella.Application.eventos.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.eliabe.silva.codechella.Application.DeletaEventoUseCase;
+import com.eliabe.silva.codechella.Application.eventos.DeletaEventoUseCase;
 import com.eliabe.silva.codechella.adapters.postgres.EventoRepository;
 
 import lombok.AllArgsConstructor;
