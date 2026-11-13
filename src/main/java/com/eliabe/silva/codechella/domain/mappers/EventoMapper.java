@@ -1,7 +1,7 @@
 package com.eliabe.silva.codechella.domain.mappers;
 
-import com.eliabe.silva.codechella.adapters.postgres.entities.Evento;
 import com.eliabe.silva.codechella.domain.dto.EventoDTO;
+import com.eliabe.silva.codechella.infrastructor.adapters.postgres.entities.Evento;
 
 public class EventoMapper {
 

@@ -2,12 +2,12 @@ package com.eliabe.silva.codechella.domain.services;
 
 import org.springframework.stereotype.Service;
 
-import com.eliabe.silva.codechella.Application.ingressos.AlteraIngressoUseCase;
-import com.eliabe.silva.codechella.Application.ingressos.CadastraIngressoUseCase;
-import com.eliabe.silva.codechella.Application.ingressos.DeletaIngressoUseCase;
-import com.eliabe.silva.codechella.Application.ingressos.IngressoService;
-import com.eliabe.silva.codechella.Application.ingressos.IngressosDisponiveisUseCase;
-import com.eliabe.silva.codechella.Application.ingressos.ObterIngressoPorIdUseCase;
+import com.eliabe.silva.codechella.Application.port.input.ingressos.AlteraIngressoUseCase;
+import com.eliabe.silva.codechella.Application.port.input.ingressos.CadastraIngressoUseCase;
+import com.eliabe.silva.codechella.Application.port.input.ingressos.DeletaIngressoUseCase;
+import com.eliabe.silva.codechella.Application.port.input.ingressos.IngressoService;
+import com.eliabe.silva.codechella.Application.port.input.ingressos.IngressosDisponiveisUseCase;
+import com.eliabe.silva.codechella.Application.port.input.ingressos.ObterIngressoPorIdUseCase;
 import com.eliabe.silva.codechella.domain.dto.IngressoDTO;
 
 import lombok.AllArgsConstructor;

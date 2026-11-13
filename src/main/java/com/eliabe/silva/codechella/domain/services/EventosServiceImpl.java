@@ -2,13 +2,16 @@ package com.eliabe.silva.codechella.domain.services;
 
 import org.springframework.stereotype.Service;
 
-import com.eliabe.silva.codechella.Application.eventos.CadastraEventoUseCase;
-import com.eliabe.silva.codechella.Application.eventos.DeletaEventoUseCase;
-import com.eliabe.silva.codechella.Application.eventos.EventosService;
-import com.eliabe.silva.codechella.Application.eventos.ListaEventosUseCase;
-import com.eliabe.silva.codechella.Application.eventos.ObterEventoUseCase;
-import com.eliabe.silva.codechella.adapters.postgres.entities.Evento;
+import com.eliabe.silva.codechella.Application.port.input.eventos.CadastraEventoUseCase;
+import com.eliabe.silva.codechella.Application.port.input.eventos.DeletaEventoUseCase;
+import com.eliabe.silva.codechella.Application.port.input.eventos.EventosService;
+import com.eliabe.silva.codechella.Application.port.input.eventos.ListaEventosUseCase;
+import com.eliabe.silva.codechella.Application.port.input.eventos.ObterEventoPorTipoUseCase;
+import com.eliabe.silva.codechella.Application.port.input.eventos.ObterEventoUseCase;
 import com.eliabe.silva.codechella.domain.dto.EventoDTO;
+import com.eliabe.silva.codechella.domain.enums.TipoEvento;
+import com.eliabe.silva.codechella.infrastructor.adapters.clientes.DeepLApiTranslationClient;
+import com.eliabe.silva.codechella.infrastructor.adapters.postgres.entities.Evento;
 
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Flux;
@@ -22,7 +25,9 @@ public class EventosServiceImpl implements EventosService {
     private final ObterEventoUseCase obterEventoUseCase;
     private final CadastraEventoUseCase cadastraEventoUseCase;
     private final DeletaEventoUseCase deletaEventoUseCase;
-
+    private final ObterEventoPorTipoUseCase obterEventoPorTipoUseCase;
+    private final DeepLApiTranslationClient deepLApiTranslationClient;
+    
     @Override
     public Flux<EventoDTO> listarEventos() {
         return listaEventosUseCase.listarEventos();
@@ -41,6 +46,18 @@ public class EventosServiceImpl implements EventosService {
     @Override
     public Mono<Void> deletarEvento(Long id) {
       return  deletaEventoUseCase.deletarEvento(id);
+    }
+
+    @Override
+    public Flux<EventoDTO> obterEventosPorTipo(String tipo) {
+       return  obterEventoPorTipoUseCase.findbyTipo(tipo);
+    }
+
+    @Override
+    public Mono<String> obterTraducao(Long id, String idioma) {
+       return obterEventoUseCase.obterEventoPorId(id)
+                .flatMap(eventoDTO -> deepLApiTranslationClient.traduzirTexto(eventoDTO.descricao(), idioma));
+      
     }
 
 }
