@@ -1,0 +1,10 @@
+spring:
+    r2dbc:
+        url: r2dbc:h2:mem:///testdb;CASE_INSENSITIVE_IDENTIFIERS=TRUE;DB_CLOSE_DELAY=-1
+    flyway:
+        url: jdbc:h2:mem:testdb;CASE_INSENSITIVE_IDENTIFIERS=TRUE;DB_CLOSE_DELAY=-1
+        locations: filesystem:src/main/resources/db/migration
+deepL:
+  token: "DeepL-Auth-Key afe663fb-d6ea-4561-8ed1-50a32adef9dd:fx"
+  host: "https://api-free.deepl.com/"
+  endpoint: "v2/translate"     

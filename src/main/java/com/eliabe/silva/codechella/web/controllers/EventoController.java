@@ -5,22 +5,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.eliabe.silva.codechella.Application.port.input.eventos.EventosService;
 import com.eliabe.silva.codechella.domain.dto.EventoDTO;
-import com.eliabe.silva.codechella.domain.enums.TipoEvento;
-import com.eliabe.silva.codechella.infrastructor.adapters.postgres.entities.Evento;
-
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Sinks;
 
 import java.time.Duration;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 
@@ -47,6 +45,7 @@ public class EventoController {
 
     
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Mono<EventoDTO> cadastrarEventos(@RequestBody EventoDTO eventoDTO){
         return eventosService.cadastrarEvento(eventoDTO).doOnSuccess(evento -> eventoSink.tryEmitNext(evento));
     }
