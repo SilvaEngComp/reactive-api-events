@@ -3,7 +3,7 @@ package com.eliabe.silva.codechella.web.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eliabe.silva.codechella.Application.ingressos.IngressoService;
+import com.eliabe.silva.codechella.Application.port.input.ingressos.IngressoService;
 import com.eliabe.silva.codechella.domain.dto.IngressoDTO;
 
 import lombok.AllArgsConstructor;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController 
